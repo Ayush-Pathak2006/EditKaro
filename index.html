@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EditKaro.in — Social Media & Video Editing Agency</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <!-- Background layer -->
+    <div id="siteBackground" aria-hidden="true">
+      <canvas id="bgParticles"></canvas>
+      <div class="bg-blob blob-1"></div>
+      <div class="bg-blob blob-2"></div>
+    </div>
+
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo">EK</div>
+          <div class="brand-text">
+            <div class="brand-name">EditKaro.in</div>
+            <div class="brand-sub">Social Media & Video Editing</div>
+          </div>
+        </div>
+
+        <div class="nav-controls">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+            <span id="themeIcon">🌙</span>
+          </button>
+          <button id="navToggle" class="nav-toggle">☰</button>
+        </div>
+
+        <nav class="main-nav" id="mainNav">
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="cta" id="authBtn">Sign In</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-left">
+          <div class="eyebrow">Premium — Video editing and marketing</div>
+          <h1 class="hero-title">
+            We make Stories that makes you cry-smile <br />
+            Be your inspitaion-nostalgia
+          </h1>
+          <p class="hero-sub">
+            EditKaro specializes in short-form social videos, long-form content,
+            gaming edits, football edits, ecommerce ads, documentaries, color
+            grading and anime edits.
+          </p>
+
+          <div class="buttons">
+            <a class="btn btn-primary" id="startProjectBtn" href="contact.html">Start a Project</a>
+            <a class="btn btn-ghost" id="watchVideoBtn" href="services.html">Watch Demo</a>
+          </div>
+
+          <section class="trust-section trust-section--marquee">
+            <div class="trust-title">Trusted by many creators & brands</div>
+            <div class="marquee" aria-hidden="true">
+              <div class="marquee-track">
+                <img src="Logo1 (2).png" alt="brand" />
+                <img src="logo2.png" alt="brand" />
+                <img src="logo3.png" alt="brand" />
+                <img src="logo4.png" alt="brand" />
+                <img src="logo5.png" alt="brand" />
+                <img src="logo6.png" alt="brand" />
+                <img src="logo3.png" alt="brand" />
+                <img src="logo1.png" alt="brand" />
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-img" aria-hidden="true">
+            <img id="heroImg" src="imp2.png" data-light-src="imp2.png" data-dark-src="imp.png" />
+          </div>
+        </div>
+      </section>
+
+      <!-- TRENDING -->
+      <section class="trending-section">
+        <div class="trending-inner">
+          <h2 class="trending-heading">Trending</h2>
+          <p class="trending-sub">Latest and most impactful offerings.</p>
+          <div class="trending-wrap">
+            <div class="trending-card">
+              <div class="trending-media"><img src="TrendingCard.png" alt="Premium" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLANS -->
+      <section id="plans" class="plans-section">
+        <div class="container">
+          <div class="plans-head">
+            <h2 class="plans-title">Our Plans</h2>
+            <p class="plans-sub">Monthly or yearly subscriptions.</p>
+          </div>
+          <div class="plans-wrap">
+            <div class="plans-carousel">
+              <article class="plan-card" data-index="0">
+                <div class="plan-media-wrapper">
+                  <div class="plan-badge">Starter</div>
+                  <img src="Plan1.jpeg" alt="Starter plan" class="plan-media" />
+                </div>
+                <div class="plan-body">
+                  <h3 class="plan-name">Starter Plan</h3>
+                  <p class="plan-desc">Basic social edits, 72-hour turnaround.</p>
+                  <div class="plan-price-wrap"><div class="plan-price">₹799 <span class="period">/month</span></div></div>
+                  <div class="plan-ctas">
+                    <a href="contact.html"><button class="btn btn-primary subscribe">Subscribe</button></a>
+                    <button class="btn preview">Preview</button>
+                  </div>
+                </div>
+              </article>
+              <article class="plan-card" data-index="1">
+                <div class="plan-media-wrapper">
+                  <div class="plan-badge">Pro</div>
+                  <img src="TrendingCard.png" alt="Pro plan" class="plan-media" />
+                </div>
+                <div class="plan-body">
+                  <h3 class="plan-name">Pro Creator</h3>
+                  <p class="plan-desc">Priority edits, color grading, 48-hour turnaround.</p>
+                  <div class="plan-price-wrap"><div class="plan-price">₹2,499 <span class="period">/month</span></div></div>
+                  <div class="plan-ctas">
+                    <a href="contact.html"><button class="btn btn-primary subscribe">Subscribe</button></a>
+                    <button class="btn preview">Preview</button>
+                  </div>
+                </div>
+              </article>
+              <article class="plan-card" data-index="2">
+                <div class="plan-media-wrapper">
+                  <div class="plan-badge">Premium</div>
+                  <img src="Plan3.jpeg" alt="Premium plan" class="plan-media" />
+                </div>
+                <div class="plan-body">
+                  <h3 class="plan-name">Agency Elite</h3>
+                  <p class="plan-desc">Dedicated editor, 24-hour delivery, unlimited revisions.</p>
+                  <div class="plan-price-wrap"><div class="plan-price">₹4,999 <span class="period">/month</span></div></div>
+                  <div class="plan-ctas">
+                    <a href="contact.html"><button class="btn btn-primary subscribe">Subscribe</button></a>
+                    <button class="btn preview">Preview</button>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div><div class="footer-title">EditKaro.in</div><div class="muted">Social Media Marketing & Video Editing</div></div>
+        <div style="text-align: right" class="muted"><div>© EditKaro 2025</div><div style="margin-top: 6px">Email: EditKaro@gmail.com</div></div>
+      </div>
+    </footer>
+
+    <!-- NEW: Pop-up Preview Card (Replaces Modal) -->
+    <div id="planPreviewOverlay" class="preview-overlay" aria-hidden="true">
+      <div class="preview-card">
+        <button id="closePreview" class="close-icon" aria-label="Close">✕</button>
+        
+        <div class="preview-header">
+          <div class="preview-badge" id="previewBadge">Plan Name</div>
+          <h2 id="previewTitle" class="preview-title">Title Here</h2>
+        </div>
+
+        <div class="preview-body">
+          <p id="previewDesc" class="preview-desc">Description text...</p>
+          
+          <div class="preview-list-title">What's Included:</div>
+          <ul id="previewFeatures" class="preview-features">
+            <!-- Features injected by JS -->
+          </ul>
+        </div>
+
+        <div class="preview-footer">
+          <a href="contact.html" class="btn btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
