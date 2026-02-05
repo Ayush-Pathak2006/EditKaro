@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login — EditKaro.in</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body>
+    <!-- Background Animated Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <a href="../index.html" class="back-link">← Back to Home</a>
+
+    <div class="login-container">
+      <div class="logo">EK</div>
+      <h1>Welcome</h1>
+      <p>Enter your name and sign in to continue.</p>
+
+      <div style="margin-bottom: 20px; text-align: left;">
+        <label for="customName" style="font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; display: block;">Your Name</label>
+        <input type="text" id="customName" placeholder="e.g. Rahul Sharma" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--input-bg); color: var(--text); outline: none; transition: border 0.2s;">
+      </div>
+
+      <button id="googleBtn" class="google-btn">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google G" />
+        <span id="btnText">Continue with Google</span>
+        <div class="loader" id="btnLoader"></div>
+      </button>
+
+      <div id="error-msg"></div>
+
+      <div class="divider"><span>SECURE LOGIN</span></div>
+      <div class="footer-links">
+        By continuing, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+      </div>
+    </div>
+
+    <!-- MODULE TYPE IS REQUIRED -->
+    <script type="module" src="./login.js"></script>
+  </body>
+</html>

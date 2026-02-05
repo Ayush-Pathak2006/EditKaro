@@ -1,4 +1,4 @@
-import { firebaseConfig } from './config.js';
+import { firebaseConfig } from './Config/config.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
@@ -10,9 +10,6 @@ const db = getFirestore(app);
 
 // 2. Main Logic Wrapper
 (() => {
-  // =========================================
-  // THEME & NAV LOGIC (Restored Original)
-  // =========================================
   const root = document.documentElement;
   const themeToggle = document.getElementById("themeToggle");
   const themeIcon = document.getElementById("themeIcon");
@@ -65,9 +62,6 @@ const db = getFirestore(app);
     });
   }
 
-  // =========================================
-  // FIREBASE AUTH LOGIC (Login/Logout/Name)
-  // =========================================
   onAuthStateChanged(auth, async (user) => {
     // Remove old mobile name if it exists (prevents duplicates)
     const existingUserItem = document.getElementById("mobileUserItem");
@@ -110,7 +104,7 @@ const db = getFirestore(app);
       // --- USER LOGGED OUT ---
       if (authBtn) {
         authBtn.textContent = "Sign In";
-        authBtn.href = "login.html";
+        authBtn.href = "/Auth/login.html";
         authBtn.onclick = null;
       }
     }

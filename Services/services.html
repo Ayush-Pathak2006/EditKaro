@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Work — EditKaro.in</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/About/about.css" />
+    <link rel="stylesheet" href="/Services/services.css" />
+  </head>
+
+  <body>
+    <!-- BACKGROUND LAYER -->
+    <div id="siteBackground" aria-hidden="true">
+      <canvas id="bgParticles"></canvas>
+      <div class="bg-blob blob-1"></div>
+      <div class="bg-blob blob-2"></div>
+    </div>
+
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo">EK</div>
+          <div class="brand-text">
+            <div class="brand-name">EditKaro.in</div>
+            <div class="brand-sub">Social Media & Video Editing</div>
+          </div>
+        </div>
+        <div class="nav-controls">
+          <button id="themeToggle" class="theme-toggle"><span id="themeIcon">🌙</span></button>
+          <button id="navToggle" class="nav-toggle">☰</button>
+        </div>
+        <nav class="main-nav" id="mainNav">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../About/about.html">About</a></li>
+            <li><a href="../Contact/contact.html">Contact</a></li>
+            <li><a href="../Auth/login.html" class="cta" id="authBtn">Sign In</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="services-hero">
+        <h1 class="page-title">Our Work</h1>
+        <p class="page-sub">Explore our portfolio across different editing styles.</p>
+        
+        <div class="category-chips" role="list">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="short">Short-form</button>
+          <button class="chip" data-filter="long">Long-form</button>
+          <button class="chip" data-filter="gaming">Gaming</button>
+          <button class="chip" data-filter="football">Football</button>
+          <button class="chip" data-filter="ecom">eCommerce Ads</button>
+          <button class="chip" data-filter="doc">Documentary</button>
+          <button class="chip" data-filter="grading">Color Grading</button>
+          <button class="chip" data-filter="anime">Anime Edits</button>
+          <button class="chip" data-filter="ads">Ads</button>
+        </div>
+      </section>
+
+      <!-- UPDATED PORTFOLIO GRID (Using Resource Folder) -->
+      <section class="portfolio-grid" id="portfolioGrid">
+        
+       <div class="portfolio-card" data-category="short ads" data-video-src="../resource/shortvid2.mp4" data-custom-thumb="resource/VIraledit.webp">
+          <div class="card-image">
+            <video class="thumb-img" src="../resource/shortvid2.mp4" poster="../resource/VIraledit.webp" muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+            <div class="card-overlay"><span>▶ Play Video</span></div>
+          </div>
+          <div class="card-info"><h3>Viral Reels Edit</h3><span class="card-tag">Short-form</span></div>
+        </div>
+
+        <!-- CARD 2: Gaming -->
+        <div class="portfolio-card" data-category="gaming" data-video-src="../resource/Gaming.mp4" data-custom-thumb="../resource/gamingFinal.jpg">
+          <div class="card-image">
+            <video class="thumb-img" src="../resource/Gaming.mp4" poster="../resource/gamingFinal.jpg" muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+            <div class="card-overlay"><span>▶ Play Video</span></div>
+          </div>
+          <div class="card-info"><h3>Gaming Montage</h3><span class="card-tag">Gaming</span></div>
+        </div>
+
+        <!-- CARD 3: Documentary -->
+        <div class="portfolio-card" data-category="doc long" data-video-src="../resource/e-commerce.mp4" data-custom-thumb="../resource/Viral.jpg">
+          <div class="card-image">
+            <video class="thumb-img" src="../resource/e-commerce.mp4" poster="../resource/Viral.jpg" muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+            <div class="card-overlay"><span>▶ Play Video</span></div>
+          </div>
+          <div class="card-info"><h3>iQOO Launch</h3><span class="card-tag">eCommerce Ads</span></div>
+        </div>
+
+        <!-- CARD 4: Football -->
+        <div class="portfolio-card" data-category="football short" data-video-src="../resource/football.mp4" data-custom-thumb="../resource/Messi.jpg">
+          <div class="card-image">
+            <video class="thumb-img" src="../resource/football.mp4" poster="../resource/Messi.jpg" muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+            <div class="card-overlay"><span>▶ Play Video</span></div>
+          </div>
+          <div class="card-info"><h3>Messi Skills Mix</h3><span class="card-tag">Football</span></div>
+        </div>
+
+        <!-- CARD 5: eCommerce -->
+        <div class="portfolio-card" data-category="ecom ads" data-video-src="../resource/shortvid.mp4" data-custom-thumb="../resource/logo2.png">
+          <div class="card-image">
+            <video class="thumb-img" src="../resource/shortvid.mp4" poster="../resource/logo2.png.png" muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+            <div class="card-overlay"><span>▶ Play Video</span></div>
+          </div>
+          <div class="card-info"><h3>Iphone Launch Ad</h3><span class="card-tag">eCommerce Ads</span></div>
+        </div>
+
+        <!-- CARD 6: Anime -->
+        <div class="portfolio-card" data-category="anime grading" data-video-src="../resource/anime.mp4" data-custom-thumb="../resource/AOT edit.jpg">
+          <div class="card-image">
+            <video class="thumb-img" src="../resource/anime.mp4" poster="../resource/AOT edit.jpg" muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+            <div class="card-overlay"><span>▶ Play Video</span></div>
+          </div>
+          <div class="card-info"><h3>Anime</h3><span class="card-tag">Anime Edits</span></div>
+        </div>
+
+      </section>
+
+      <!-- WALL OF LOVE -->
+      <section class="love-section">
+        <div class="container">
+          <div class="love-head">
+            <h2 class="plans-title">Wall of Love</h2>
+            <p class="plans-sub">Kind words from our amazing community of creators.</p>
+          </div>
+          <div class="love-grid">
+            <div class="love-card">
+              <div class="love-header"><div class="love-avatar" style="background: #FF6B6B;">JD</div><div class="love-info"><div class="love-name">John Doe</div><div class="love-handle">@johndoe</div></div><div class="love-icon">𝕏</div></div>
+              <p class="love-text">Honestly, EditKaro saved my YouTube channel. The consistency they bring is unmatched. Before them, I was uploading once a month. Now? Weekly bangers! 🔥</p>
+            </div>
+            <div class="love-card">
+              <div class="love-header"><div class="love-avatar" style="background: #4ECDC4;">SJ</div><div class="love-info"><div class="love-name">Sarah Jenkins</div><div class="love-handle">@sarah_vlogs</div></div><div class="love-icon">𝕏</div></div>
+              <p class="love-text">The color grading on my travel vlogs is insane now. I didn't even know my footage could look this cinematic. Worth every penny for the Pro plan.</p>
+            </div>
+            <div class="love-card">
+              <div class="love-header"><div class="love-avatar" style="background: #FFE66D; color: #333;">MK</div><div class="love-info"><div class="love-name">Mike K.</div><div class="love-handle">@gaming_mike</div></div><div class="love-icon">𝕏</div></div>
+              <p class="love-text">Turnaround time is actually 24 hours. I sent raw footage at 2 PM and got the edit by 10 AM the next day. Insane workflow. 🚀</p>
+            </div>
+            <div class="love-card">
+              <div class="love-header"><div class="love-avatar" style="background: #6c5ce7;">AL</div><div class="love-info"><div class="love-name">Anita Lee</div><div class="love-handle">@anita_startups</div></div><div class="love-icon">𝕏</div></div>
+              <p class="love-text">As a founder, I don't have time to edit Reels. EditKaro took over our entire short-form content strategy. Engagement is up 400%.</p>
+            </div>
+            <div class="love-card">
+              <div class="love-header"><div class="love-avatar" style="background: #0984e3;">R</div><div class="love-info"><div class="love-name">Rahul</div><div class="love-handle">@rahul_edits</div></div><div class="love-icon">𝕏</div></div>
+              <p class="love-text">Simple, fast, effective. No back and forth emails. The dashboard makes everything smooth. Best agency experience I've had so far.</p>
+            </div>
+            <div class="love-card">
+              <div class="love-header"><div class="love-avatar" style="background: #fd79a8;">VP</div><div class="love-info"><div class="love-name">Vlog Pro</div><div class="love-handle">@vlogpro_official</div></div><div class="love-icon">𝕏</div></div>
+              <p class="love-text">Just received my 10th video from them. The quality hasn't dropped once. Highly recommend the Premium plan if you are serious about growth. 💯</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+       <footer>
+      <div class="container footer-grid">
+        <div><div class="footer-title">EditKaro.in</div><div class="muted">Social Media Marketing & Video Editing</div></div>
+        <div style="text-align: right" class="muted"><div>© EditKaro 2025</div></div>
+      </div>
+    </footer>
+
+    <div id="videoModal" class="modal" aria-hidden="true">
+      <div class="video-modal-content">
+        <button id="closeVideoModal" class="modal-close-outside">✕</button>
+        <div class="video-player-wrapper">
+          <video id="modalVideoPlayer" controls controlsList="nodownload"></video>
+        </div>
+      </div>
+    </div>
+
+  
+
+    <script type="module" src="./services.js"></script>
+  </body>
+</html>

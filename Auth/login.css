@@ -1,0 +1,141 @@
+/* =========================
+   THEME VARIABLES
+   ========================= */
+:root {
+  --bg: #fff7f2;
+  --surface: #ffffff;
+  --muted: #6b6b6b;
+  --text: #111111;
+  --accent1: #ff7a3d;
+  --accent2: #ffb28a;
+  --accent-purple: #c94bff;
+  --card: #ffffff;
+  --shadow: 0 8px 30px rgba(16, 24, 40, 0.08);
+  --input-bg: #f9f9f9;
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] {
+  --bg: linear-gradient(180deg, #070609, #0b0b10);
+  --surface: #0f1116;
+  --muted: #9aa0a6;
+  --text: #e9e6ff;
+  --accent1: #8b4bff;
+  --accent2: #c94bff;
+  --accent-purple: #c94bff;
+  --card: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  background-attachment: fixed; /* FIXED: Prevents bg clipping */
+  background-size: cover;
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+/* Background Effects */
+.bg-blob {
+  position: absolute;
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: -1;
+  animation: float 10s ease-in-out infinite;
+}
+.blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--accent1); }
+.blob-2 { bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: var(--accent-purple); animation-delay: -5s; }
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, 40px); }
+}
+
+/* Login Card */
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  width: 56px; height: 56px;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  border-radius: 12px; color: white;
+  font-size: 24px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+h1 { margin: 0 0 8px; font-size: 28px; font-weight: 800; color: var(--text); }
+p { margin: 0 0 32px; color: var(--muted); font-size: 15px; line-height: 1.5; }
+
+/* Input */
+.login-container input {
+  width: 100%; padding: 12px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--input-bg);
+  color: var(--text); outline: none; transition: border 0.2s;
+}
+.login-container input:focus { border-color: var(--accent1); }
+
+/* Google Button */
+.google-btn {
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px; width: 100%; padding: 14px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; color: var(--text); font-weight: 600;
+  font-size: 16px; cursor: pointer; transition: all 0.2s ease;
+  position: relative; overflow: hidden;
+}
+.google-btn:hover { background: var(--input-bg); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.google-btn img { width: 20px; height: 20px; }
+
+.divider {
+  display: flex; align-items: center; margin: 24px 0; color: var(--muted); font-size: 13px; font-weight: 500;
+}
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.divider span { padding: 0 12px; }
+
+.footer-links { margin-top: 24px; font-size: 13px; color: var(--muted); }
+.footer-links a { color: var(--accent1); text-decoration: none; font-weight: 600; }
+.footer-links a:hover { text-decoration: underline; }
+
+.back-link {
+  position: absolute; top: 20px; left: 20px;
+  color: var(--text); text-decoration: none;
+  font-size: 14px; font-weight: 600;
+  display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s; z-index: 20;
+  background: var(--surface); padding: 8px 12px;
+  border-radius: 8px; border: 1px solid var(--border);
+}
+.back-link:hover { transform: scale(1.02); }
+
+#error-msg { color: #ff4b4b; font-size: 14px; margin-top: 10px; display: none; }
+
+.loader {
+  border: 2px solid rgba(0,0,0,0.1); border-left-color: var(--accent1);
+  border-radius: 50%; width: 20px; height: 20px;
+  animation: spin 1s linear infinite; display: none;
+}
+html[data-theme="dark"] .loader { border-color: rgba(255,255,255,0.1); border-left-color: var(--accent1); }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }

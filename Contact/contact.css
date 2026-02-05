@@ -1,0 +1,147 @@
+/* =========================
+   CONTACT PAGE STYLES
+   ========================= */
+
+/* Wrapper to center the form */
+.contact-wrapper {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 700px;
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: var(--shadow);
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Titles */
+.contact-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--heading-color);
+  margin: 0 0 10px;
+  text-align: center;
+}
+.contact-sub {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+/* Form Grid */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .contact-card { padding: 24px; }
+}
+
+/* Inputs & Labels */
+.form-group { margin-bottom: 20px; }
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+/* Dark mode adjustments for inputs */
+html[data-theme="dark"] input, 
+html[data-theme="dark"] select, 
+html[data-theme="dark"] textarea {
+  border-color: rgba(255,255,255,0.1);
+  background: #15171e; /* Solid dark background to fix brightness */
+  color: #e9e6ff;
+}
+
+/* CRITICAL FIX: Dark Mode Dropdown Options */
+html[data-theme="dark"] select option {
+  background-color: #15171e; /* Matches input bg */
+  color: #fff;
+  padding: 10px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent1);
+  box-shadow: 0 0 0 3px rgba(255, 122, 61, 0.15);
+}
+
+/* Select Dropdown Arrow Customization */
+.select-wrapper { position: relative; }
+.select-wrapper::after {
+  content: "▼";
+  font-size: 12px;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+select { appearance: none; cursor: pointer; }
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Success/Error Message */
+#formMessage {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  min-height: 20px;
+}
+.success-msg { color: #10b981; }
+.error-msg { color: #ff4b4b; }
+
+/* Loader */
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
