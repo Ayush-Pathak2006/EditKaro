@@ -61,8 +61,8 @@ The backend functionality is fully handled by Firebase, acting as a Backend-as-a
 - **CSS3**
 - **JavaScript**
 - **Firebase**
-  - Authentication (email/password) 
-  - Firestore / Realtime Database (for storing contact messages — if implemented)
+  - Authentication  
+  - Firestore / Realtime Database
 
 ---
 
